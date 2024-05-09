@@ -28,5 +28,8 @@ Route::middleware('auth')->group(function(){
         //anggota
         Route::get('/anggota',[\App\Http\Controllers\Admin\AnggotaController::class,'index'])->name('anggota');
         Route::post('/anggota/store',[\App\Http\Controllers\Admin\AnggotaController::class,'store'])->name('anggota.store');
+        //pinjaman
+        Route::get('/pinjaman',[\App\Http\Controllers\Admin\PinjamanController::class,'index'])->name('pinjaman');
+        Route::post('/pinjaman',[\App\Http\Controllers\Admin\PinjamanController::class,'store'])->name('pinjaman.simpan');
     });
 });

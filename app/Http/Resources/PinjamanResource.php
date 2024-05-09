@@ -23,8 +23,8 @@ class PinjamanResource extends JsonResource
             'sisa_pinjaman' => $this->sisa_pinjaman,
             'keterangan' => $this->keterangan,
             'biaya_admin' => $this->biaya_admin,
-
             'user_id' => $this->user_id,
+            "user" => new UserResource($this->whenLoaded('user')),
         ];
     }
 }

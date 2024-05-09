@@ -13,7 +13,7 @@ import NavLink from "@/Components/NavLink.vue";
              <div v-if="$page.props.auth.user.role == 'admin'">
                 <NavLink icon="pi pi-home" :href="route('admin.dashboard')">Home</NavLink>
                 <NavLink icon="pi pi-file-arrow-up" :href="route('admin.simpanan')">Simpanan</NavLink>
-                <NavLink icon="pi pi-arrow-down" :href="route('admin.dashboard')">Pinjaman</NavLink>
+                <NavLink icon="pi pi-arrow-down" :href="route('admin.pinjaman')">Pinjaman</NavLink>
                 <NavLink icon="pi pi-users" :href="route('admin.anggota')">Anggota</NavLink>
                 <NavLink icon="pi pi-wallet" :href="route('admin.dashboard')">Angsuran</NavLink>
              </div>

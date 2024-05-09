@@ -20,9 +20,7 @@ class AngsuranResource extends JsonResource
             'ke' => $this->ke,
             'status' => $this->status,
             'waktu_bayar' => $this->waktu_bayar,
-
             'pinjaman_id' => $this->pinjaman_id,
-
             'pinjaman' => new PinjamanResource($this->whenLoaded('pinjaman')),
         ];
     }
