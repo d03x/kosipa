@@ -15,11 +15,10 @@ class AnggotaResource extends JsonResource
             'updated_at' => $this->updated_at,
             'id' => $this->id,
             'nama' => $this->nama,
-            'no_telp' => $this->no_telp,
+            'no_telepon' => $this->no_telepon,
             'email' => $this->email,
-            'pekerjaan' => $this->pekerjaan,
+            'agama' => $this->agama,
             'jenis_kelamin' => $this->jenis_kelamin,
-            'tanggal_gabung' => $this->tanggal_gabung,
             'alamat' => $this->alamat,
             'User' => new UserResource($this->whenLoaded('user')),
         ];

@@ -18,8 +18,8 @@ class UserResource extends JsonResource
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'anggota_id' => $this->anggota_id,
-            'pinjaman_count' => $this->pinjaman()->count(),
-            'simpanan_count' => $this->simpanan()->whereStatus(true)->count(),
+            'jumlah_pinjaman' => $this->pinjaman()->sum('jumlah'),
+            'jumlah_simpanan' => $this->simpanan()->whereStatus(true)->sum('jumlah'),
 
             'pinjaman' => PinjamanResource::collection($this->whenLoaded('pinjaman')),
             'simpanan' => SimpananResource::collection($this->whenLoaded('simpanan')),

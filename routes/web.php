@@ -25,5 +25,7 @@ Route::middleware('auth')->group(function(){
         Route::patch('simpanan/{simpanan}/confirm',[\App\Http\Controllers\Admin\SimpananController::class,'confirm'])->name('simpanan.confirm');
         Route::delete('simpanan/{simpanan}/confirm',[\App\Http\Controllers\Admin\SimpananController::class,'delete'])->name('simpanan.delete');
         Route::post('simpanan/store',[\App\Http\Controllers\Admin\SimpananController::class,'store'])->name('simpanan.store');
+        //anggota
+        Route::get('/anggota',[\App\Http\Controllers\Admin\AnggotaController::class,'index'])->name('anggota');
     });
 });
