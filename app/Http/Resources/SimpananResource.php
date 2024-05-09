@@ -19,6 +19,7 @@ class SimpananResource extends JsonResource
             'jenis_simpanan_id' => $this->jenis_simpanan_id,
             'user_id' => $this->user_id,
             'jenisSimpanan' => new JenisSimpananResource($this->whenLoaded('jenisSimpanan')),
+            'user' => $this->user,
         ];
     }
 }

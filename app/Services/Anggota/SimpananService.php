@@ -4,7 +4,7 @@ namespace App\Services\Anggota;
 
 use Illuminate\Support\Facades\Auth;
 
-class AnggotaService
+class SimpananService
 {
     public function getStatistic()
     {

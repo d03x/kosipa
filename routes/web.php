@@ -18,4 +18,10 @@ Route::middleware('auth')->group(function(){
         //route untuk pinjaman
         Route::get('/pinjaman',[\App\Http\Controllers\Anggota\PinjamanController::class,'index'])->name('pinjaman');
     });
+
+    Route::prefix('admin')->name('admin.')->middleware(\App\Http\Middleware\AdminMiddleware::class)->prefix('admin')->group(function(){
+        Route::get('dashboard',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('dashboard');
+        Route::get('simpanan',[\App\Http\Controllers\Admin\SimpananController::class,'index'])->name('simpanan');
+        Route::patch('simpanan/{simpanan}/confirm',[\App\Http\Controllers\Admin\SimpananController::class,'confirm'])->name('simpanan.confirm');
+    });
 });
