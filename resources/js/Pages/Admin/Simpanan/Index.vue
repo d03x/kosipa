@@ -33,8 +33,8 @@ const actions = {
                 <div class="text-sm">List Simpanan Anda</div>
             </template>
             <template #content>
-                <Button class="mb-4" label="Tambah" icon="pi pi-plus" size="small">Tambah</Button>
-                <ModalTambahSimpanan/>
+                <Button @click="showModal = !showModal" class="mb-4" label="Tambah" icon="pi pi-plus" size="small">Tambah</Button>
+                <ModalTambahSimpanan v-model:visible="showModal"/>
                 <DataTable class="text-sm" size="small"  :value="$page.props.simpanan.data" stripedRows tableStyle="min-width: 50rem">
                     <Column field="id" header="ID"></Column>
                     <Column field="tanggal" header="Tanggal"></Column>

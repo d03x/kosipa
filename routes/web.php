@@ -23,5 +23,6 @@ Route::middleware('auth')->group(function(){
         Route::get('dashboard',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('dashboard');
         Route::get('simpanan',[\App\Http\Controllers\Admin\SimpananController::class,'index'])->name('simpanan');
         Route::patch('simpanan/{simpanan}/confirm',[\App\Http\Controllers\Admin\SimpananController::class,'confirm'])->name('simpanan.confirm');
+        Route::post('simpanan/store',[\App\Http\Controllers\Admin\SimpananController::class,'store'])->name('simpanan.store');
     });
 });

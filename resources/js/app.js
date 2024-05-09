@@ -10,7 +10,7 @@ import {
 
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import PrimeVue from 'primevue/config';
-
+import ToastService from "primevue/toastservice"
 import Aura from '@/Presets/aura';
 import { createInertiaApp } from '@inertiajs/vue3';
 
@@ -28,6 +28,7 @@ createInertiaApp({
                 unstyled : true,
                 pt : Aura,
             })
+            .use(ToastService)
             .use(ZiggyVue)
             .mount(el);
     },
