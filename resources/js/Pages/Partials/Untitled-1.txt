@@ -1,0 +1,62 @@
+Tabel:
+
+Anggota:
+
+IdAnggota (primary key)
+NamaAnggota
+NIK
+AlamatAnggota
+NomorTelepon
+TanggalLahir
+JenisKelamin
+Pekerjaan
+StatusAnggota (aktif, nonaktif)
+TanggalGabung
+Simpanan:
+
+IdSimpanan (primary key)
+IdAnggota (foreign key)
+JenisSimpanan (pokok, wajib, sukarela)
+JumlahSimpanan
+TanggalSimpanan
+SukuBunga
+SaldoSimpanan
+Pinjaman:
+
+IdPinjaman (primary key)
+IdAnggota (foreign key)
+JumlahPinjaman
+JangkaWaktuPinjaman
+SukuBungaPinjaman
+TanggalPinjaman
+TanggalJatuhTempo
+StatusPinjaman (baru, lunas, macet)
+AngsuranPerBulan
+Angsuran:
+
+IdAngsuran (primary key)
+IdPinjaman (foreign key)
+JumlahAngsuran
+TanggalAngsuran
+SisaPinjaman
+Transaksi:
+
+IdTransaksi (primary key)
+JenisTransaksi (simpanan, penarikan, angsuran)
+IdSimpanan (foreign key)
+IdPinjaman (foreign key)
+JumlahTransaksi
+TanggalTransaksi
+Keterangan
+Pengurus:
+
+IdPengurus (primary key)
+NamaPengurus
+JabatanPengurus
+PeriodeJabatan
+Karyawan:
+
+IdKaryawan (primary key)
+NamaKaryawan
+JabatanKaryawan
+GajiPokok
