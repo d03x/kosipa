@@ -44,4 +44,8 @@ class SimpananController extends Controller
             'status'=> true,
          ]);
     }
+    public function delete(Simpanan $simpanan){
+         $simpanan->delete();
+         return Redirect::back();
+    }
 }

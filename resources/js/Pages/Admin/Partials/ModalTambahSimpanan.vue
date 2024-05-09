@@ -28,7 +28,7 @@ import InputError from "@/Components/InputError.vue";
     <Dialog v-model:visible="visible" modal header="Tambah Simpanan" position="top">
         <form @submit.prevent="simpan" action="" method="POST">
             <div class="mb-3">
-                <Label for="jenis_simpanan" class="font-semibold w-6rem">Jenis Simpanan</Label>
+                <Label for="jenis_simpanan" class="font-semibold w-6rem">Jenis</Label>
                 <Dropdown placeholder="Pilih jenis simpanan" v-model="simpanan.jenis_simpanan_id" :options="$page.props.jenis_simpanan.data" optionLabel="nama" optionValue="id" id="jenis_simpanan" class="flex-auto w-full" autocomplete="off" />
                 <InputError :message="$page.props.errors.jenis_simpanan_id"/>
 

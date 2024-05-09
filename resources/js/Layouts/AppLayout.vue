@@ -5,6 +5,7 @@ import Container from "@/Components/Container.vue";
 import Button from "primevue/button";
 import SidebarMenu from "@/Pages/Partials/SidebarMenu.vue";
 import Card from "primevue/card";
+import ConfirmPopup from "primevue/confirmpopup"
 import Toast from "primevue/toast"
 import StatistikAnggota from "@/Pages/Partials/StatistikAnggota.vue";
 </script>
@@ -12,6 +13,8 @@ import StatistikAnggota from "@/Pages/Partials/StatistikAnggota.vue";
 <template>
     <Navbar/>
     <Container>
+        <ConfirmPopup></ConfirmPopup>
+
         <Toast/>
         <SidebarMenu/>
         <!-- Halaman Pemesanan -->

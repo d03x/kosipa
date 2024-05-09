@@ -7,6 +7,7 @@ import {
   createApp,
   h,
 } from 'vue';
+import ConfirmationService from 'primevue/confirmationservice';
 
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import PrimeVue from 'primevue/config';
@@ -25,11 +26,12 @@ createInertiaApp({
         return createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(PrimeVue,{
-                unstyled : true,
+                unstyled : false,
                 pt : Aura,
             })
             .use(ToastService)
             .use(ZiggyVue)
+            .use(ConfirmationService)
             .mount(el);
     },
     progress: {
