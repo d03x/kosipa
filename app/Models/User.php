@@ -9,7 +9,8 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -21,6 +22,7 @@ class User extends Authenticatable
         'role',
         'email',
         'password',
+        'anggota_id',
     ];
 
     /**
@@ -45,14 +47,19 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    public function pinjaman(){
+
+    public function pinjaman()
+    {
         return $this->hasMany(Pinjaman::class);
     }
-    public function anggota(){
+
+    public function anggota()
+    {
         return $this->belongsTo(Anggota::class);
     }
-    public function simpanan(){
+
+    public function simpanan()
+    {
         return $this->hasMany(Simpanan::class);
     }
-
 }

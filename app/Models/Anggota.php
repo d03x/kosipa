@@ -9,14 +9,16 @@ class Anggota extends Model
     protected $table = 'anggotas';
     protected $fillable = [
         'nama',
-        'no_telp',
+        'no_telepon',
         'email',
+        'agama',
         'pekerjaan',
         'jenis_kelamin',
-        'tanggal_gabung',
         'alamat',
     ];
-    public function user(){
+
+    public function user()
+    {
         return $this->hasOne(User::class);
     }
 }

@@ -1,17 +1,23 @@
 <script setup>
-import Dialog from "primevue/dialog"
+import Button from 'primevue/button';
+import Dialog from 'primevue/dialog';
+import Dropdown from 'primevue/dropdown';
+import InputNumber from 'primevue/inputnumber';
+import { useToast } from 'primevue/usetoast';
+
+import InputError from '@/Components/InputError.vue';
+import Label from '@/Components/Label.vue';
+import { useForm } from '@inertiajs/vue3';
+
 const visible = defineModel('visible');
-import {useToast} from "primevue/usetoast";
-import Button from "primevue/button"
-import Dropdown from "primevue/dropdown"
+
 const simpanan = useForm({
     user_id : null,
     jumlah : 0,
     jenis_simpanan_id : null,
 })
 const toast = useToast()
-import Label from "@/Components/Label.vue"
-import {useForm} from "@inertiajs/vue3";
+
 const simpan = async () =>{
     simpanan.post(route('admin.simpanan.store'),{
         onFinish:()=> {
@@ -20,8 +26,6 @@ const simpan = async () =>{
         },
     });
 }
-import InputNumber from "primevue/inputnumber";
-import InputError from "@/Components/InputError.vue";
 </script>
 
 <template>

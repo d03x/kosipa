@@ -1,10 +1,18 @@
 <script setup>
-import Card from "primevue/card"
-import AppLayout from "@/Layouts/AppLayout.vue";
-import DataTable from "primevue/datatable"
-import Column from "primevue/column"
-import Row from "primevue/row";
-import Button from "primevue/button"
+import { ref } from 'vue';
+
+import Button from 'primevue/button';
+import Card from 'primevue/card';
+import Column from 'primevue/column';
+import DataTable from 'primevue/datatable';
+import Row from 'primevue/row';
+
+import AppLayout from '@/Layouts/AppLayout.vue';
+
+import ModalTambahData from './Partials/ModalTambah.vue';
+
+const modalTambah = ref(false);
+
 </script>
 
 <template>
@@ -12,9 +20,10 @@ import Button from "primevue/button"
     <Card>
         <template #title>
             <div class="text-sm">List Anggota</div>
-            <Button size="small" class="text-sm mt-3">Tambah</Button>
+            <Button @click="modalTambah = !modalTambah" size="small" class="text-sm mt-3">Tambah</Button>
         </template>
         <template #content>
+            <ModalTambahData v-model:visible="modalTambah"/>
             <DataTable :value="$page.props.anggota.data" tableStyle="min-width: 80rem"  stripedRows  size="small" class="text-sm">
                 <Column field="id" header="id"></Column>
                 <Column field="nama" header="Nama"></Column>
@@ -43,7 +52,7 @@ import Button from "primevue/button"
                     <template #body="slotProps">
                         <div class="flex items-center" rounded-none>
                             <Button @click="actions.confirm(slotProps)" class="text-xs rounded-none"  size="small" aria-label="Confirm" severity="danger" icon="pi pi-times" />
-                            <Button  @click="actions.confirm(slotProps)" class="text-xs rounded-none"  size="small" aria-label="Confirm" severity="success" icon="pi pi-check" />
+                            <Button @click="actions.confirm(slotProps)" class="text-xs rounded-none"  size="small" aria-label="Confirm" severity="success" icon="pi pi-check" />
                               </div>
                     </template>
                 </Column>
